@@ -1,0 +1,108 @@
+@use './reset';
+@use './fonts';
+@use './variables';
+@use './breakpoint';
+
+.container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: variables.$yellow;
+
+    .card {
+        gap: 2.4rem;
+        width: 32.7rem;
+        height: 50.1rem;
+        padding: 2.4rem;
+        border-radius: 2rem;
+        display: inline-flex;
+        flex-direction: column;
+        background: variables.$white;
+        border: 1px solid variables.$border-black;
+        box-shadow: 0.8rem 0.8rem 0 0 variables.$black;
+
+        img {
+            height: 20rem;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        &__body {
+            gap: 1.2rem;
+            display: flex;
+            flex-direction: column;
+
+            .badge {
+                font-size: 1.2rem;
+                line-height: 150%;
+                border-radius: 0.4rem;
+                padding: 0.4rem 1.2rem;
+                align-self: flex-start;
+                background: variables.$yellow;
+                font-family: "Figtree-ExtraBold";
+            }
+
+            .date {
+                font-size: 1.2rem;
+                line-height: 150%;
+            }
+
+            .title {
+                font-size: 2rem;
+                line-height: 150%;
+                font-family: "Figtree-ExtraBold";
+
+                &:hover {
+                    cursor: pointer;
+                    color: variables.$yellow;
+                }
+            }
+
+            .text {
+                font-size: 1.4rem;
+                line-height: 150%;
+                color: variables.$grey;
+            }
+        }
+
+        &__footer {
+            gap: 1.2rem;
+            display: flex;
+            font-size: 1.4rem;
+            line-height: 150%;
+            align-items: center;
+            font-family: "Figtree-ExtraBold";
+
+            img {
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+        }
+    }
+}
+
+@include breakpoint.mq(desktop) {
+    .container {
+        .card {
+            width: 38.4rem;
+            height: 52.2rem;
+
+            &__body {
+                .date,
+                .badge {
+                    font-size: 1.4rem;
+                }
+
+                .title {
+                    font-size: 2.4rem;
+                }
+
+                .text {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
